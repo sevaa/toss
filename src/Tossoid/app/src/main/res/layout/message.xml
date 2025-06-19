@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@id/Main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:id="@id/TheText"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="1"
+        android:layout_margin="5sp"
+        android:textIsSelectable="true"
+        android:focusable="true"
+        android:longClickable="true"
+        />
+    <LinearLayout
+        android:id="@+id/BuPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/Copy"
+            android:layout_width="100sp"
+            android:layout_height="wrap_content"
+            android:text="@string/IDS_COPY"/>
+        <View android:layout_weight="1"
+            android:layout_height="0px"
+            android:layout_width="0px"/>
+        <Button
+            android:id="@+id/Share"
+            android:layout_width="100sp"
+            android:layout_height="wrap_content"
+            android:text="@string/IDS_SHARE"/>
+        <View android:layout_weight="1"
+            android:layout_height="0px"
+            android:layout_width="0px"/>
+        <Button
+            android:id="@+id/Next"
+            android:layout_width="100sp"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="@string/IDS_NEXT"/>
+    </LinearLayout>
+</LinearLayout>
