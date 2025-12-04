@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/Main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ListPanel"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="1"
+        android:padding="3dp"
+        android:orientation="vertical">
+        <TextView android:id="@+id/AdvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp"/>
+        <TextView android:id="@+id/ListMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp"
+            android:text="@string/IDS_LOOKING"/>
+        <ListView
+            android:id="@+id/TheList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/SendPanel"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="1"
+        android:padding="3dp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/SendingTo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/IDS_TAPDEVICE"/>
+        <EditText
+            android:id="@+id/TheText"
+            android:inputType="textMultiLine"
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="1"
+            android:layout_marginBottom="3dp"
+            android:gravity="top|start"
+            android:enabled="false"
+            android:maxLength="492"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/Clear"
+                android:layout_width="150sp"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:text="@string/IDS_CLEAR"/>
+
+            <View
+                android:layout_height="0px"
+                android:layout_width="0px"
+                android:layout_weight="1"/>
+
+            <Button
+                android:id="@+id/Send"
+                android:layout_width="150sp"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:text="@string/IDS_SEND"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,25 @@
+<resources>
+    <string name="IDS_APPNAME">Toss</string>
+    <string name="IDS_APPDESC">Send a short text string to an instancee of Toss on another phone, tablet, or computer</string>
+    <string name="IDS_LOOKING">Looking for running Toss nearby, found those:</string>
+    <string name="IDS_SEND">Send</string>
+    <string name="IDS_CLEAR">Clear</string>
+    <string name="IDS_NONEFOUND">No running Toss instances found so far.</string>
+    <string name="IDS_SENDTO">Send to %s:</string>
+    <string name="IDS_KNOWNAS">Advertising as \"%s\".</string>
+    <string name="IDS_NEXT">Next &gt;&gt;</string>
+    <string name="IDS_COPY">Copy</string>
+    <string name="IDS_SHARE">Share</string>
+    <string name="IDS_PEERSAYS">%s says:</string>
+    <string name="IDS_TOSSEDMSG">Tossed message</string>
+    <string name="IDS_COPIED">Copied.</string>
+    <string name="IDS_TAPDEVICE">Tap a device in the list</string>
+    <string name="IDSM_ABOUT">About Toss...</string>
+    <string name="IDS_ABOUT">About Toss</string>
+    <string name="IDS_ABOUT1">Toss - sending short text messages between devices on the same network</string>
+    <string name="IDS_ABOUT2">Seva Alekseyev, 2025</string>
+    <string name="IDS_ABOUT3">Toss for other platforms can be found at their respective app stores</string>
+    <string name="IDS_ABOUT4">https://github.com/sevaa/toss/</string>
+    <string name="IDS_ABOUT_VER">Version %s</string>
+
+</resources>
