@@ -94,7 +94,10 @@ static INT_PTR CALLBACK MessageDlgProc(HWND hDlg, unsigned Msg, WPARAM wParam, L
 	case WM_INITDIALOG:
 		{
 		    const CReceivedMessage *rm = (const CReceivedMessage*)lParam;
-			SetDlgItemText(hDlg, IDC_TEXT, rm->Text);
+			LPCWSTR pText = rm->Text;
+			SetDlgItemText(hDlg, IDC_TEXT, pText);
+			if (!wcsncmp(pText, L"https://", 8) || !wcsncmp(pText, L"http://", 7))
+				ShowWindow(GetDlgItem(hDlg, IDC_NAVIGATE), SW_SHOW);
 			CPeers::iterator it = FindPeer(rm->PeerGUID);
 			wstring Title, ws;
 			if(it != s_Peers.end())
@@ -109,6 +112,15 @@ static INT_PTR CALLBACK MessageDlgProc(HWND hDlg, unsigned Msg, WPARAM wParam, L
 	case WM_COMMAND:
 		if(LOWORD(wParam) == IDCANCEL)
 			EndDialog(hDlg, IDCANCEL);
+		else if (LOWORD(wParam) == IDC_NAVIGATE)
+		{
+			size_t n = (size_t)SendDlgItemMessage(hDlg, IDC_TEXT, WM_GETTEXTLENGTH, 0, 0);
+			LPWSTR s = (LPWSTR)_alloca((n + 1) * sizeof(wchar_t));
+			*s = wchar_t(n + 1);
+			n = (size_t)SendDlgItemMessage(hDlg, IDC_TEXT, EM_GETLINE, 0, (LPARAM)s);
+			s[n] = 0;
+			ShellExecute(hDlg, 0, s, 0, 0, SW_SHOWNORMAL);
+		}
 		break;
 	case WM_CLOSE:
 		EndDialog(hDlg, IDCANCEL);
